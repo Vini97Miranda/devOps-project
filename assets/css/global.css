@@ -1,0 +1,30 @@
+:root{
+    --blue-000: #14235d;
+    --yellow-000: #ff0;
+}
+
+/* ============== Do not delete this ========== */
+.section-selector-1 { background-color: var(--white-000) }
+.col-3 h3 { margin-bottom: 16px }
+
+/* =============== Add your custom CSS below =========== */
+header.theme-dark { background-color: var(--blue-000) }
+header.theme-dark h1 { color: var(--yellow-000) }
+header.theme-dark .container-btn a.btn:nth-child(1):link,
+header.theme-dark .container-btn a.btn:nth-child(1):visited { color: var(--white-000) }
+
+header.theme-dark .container-btn a.btn:nth-child(1):focus,
+header.theme-dark .container-btn a.btn:nth-child(1):hover,
+header.theme-dark .container-btn a.btn:nth-child(1):active { color: var(--blue-000); background-color: var(--yellow-000) }
+ 
+header.theme-dark h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: var(--font-size-xxxl);
+}
+ 
+header.theme-dark h2 {
+    font-family: 'Zilla Slab', serif;
+    font-weight: 400;
+}
