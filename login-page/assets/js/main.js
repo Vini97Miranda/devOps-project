@@ -1,4 +1,7 @@
 /*=============== SHOW HIDDEN - PASSWORD ===============*/
+
+
+
 const showHiddenPass = (inputPass, inputIcon) => {
     const input = document.getElementById(inputPass);
     const iconEye = document.getElementById(inputIcon);
@@ -18,7 +21,7 @@ const showHiddenPass = (inputPass, inputIcon) => {
         }
     });
 };
-//---- SERVER ----
+//---- EVENT ----
 document.addEventListener('DOMContentLoaded', function () {
 
     showHiddenPass('input-pass', 'input-icon');
@@ -37,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('email', email);
             formData.append('password', password);
             formData.append('rememberMe', rememberMe);
+
+
+            // Here we check if the user is on the Data-Base
 
             window.location.href="assets/html/calendar.html";
             fetch('/login', {
