@@ -17,10 +17,6 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'login.html'));
 });
 
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'register.html'));
-});
-
 app.listen(port, () => {
     console.log(`Serveur en écoute sur le port ${port}`);
 });
