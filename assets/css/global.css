@@ -87,16 +87,8 @@ body {
     display: none;
 }
 
-.teacher-rev {
-    display: initial;
-}
-
 .devlopper {
     display: none;
-}
-
-.devlopper-rev {
-    display: initial;
 }
 
 /* mobile styles */
