@@ -2,7 +2,6 @@
 const showHiddenPass = (inputPass, inputIcon) => {
     const input = document.getElementById(inputPass);
     const iconEye = document.getElementById(inputIcon);
-
     iconEye.addEventListener('click', () => {
         // Change password to text
         if (input.type === 'password') {
@@ -19,7 +18,7 @@ const showHiddenPass = (inputPass, inputIcon) => {
         }
     });
 };
-
+//---- SERVER ----
 document.addEventListener('DOMContentLoaded', function () {
 
     showHiddenPass('input-pass', 'input-icon');
@@ -51,5 +50,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-
-showHiddenPass('input-pass','input-icon')
+//---- SERVER ----
