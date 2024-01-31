@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             formData.append('email', email);
             formData.append('password', password);
             formData.append('rememberMe', rememberMe);
+
+            window.location.href="assets/html/calendar.html";
             fetch('/login', {
                 method: 'POST',
                 body: formData,
