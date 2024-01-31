@@ -1,88 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dorset Booking</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="assets/img//favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="assets/img//favicon-16x16.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importing Remixicons font -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Linking to custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-	<!-- Preload large image -->
-
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
-	<link rel="stylesheet" href="assets/css/global.css" />
-
-	<!-- Google Fonts -->
-
-	<!-- Font Awesome 6 icons. Delete if not using. -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-		integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-	<!-- Line Awesome thin icons. Delete if not using. -->
-	<link rel="stylesheet"
-		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
+    <title>Dev ops</title>
 </head>
-
-
 <body>
-	<!-- Navigation starts here -->
-	<nav class="menu-container">
-		<!-- logo -->
-		<div class="menu-logo"><img src="./assets/img/favicon-32x32.png" alt="Dorset logo"/></div>
+<div class="container">
+    <div class="login__content">
+        <div class="circle-user">
 
-		<!-- menu items -->
-		<div class="menu">
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#">Works</a></li>
-				<li class="teacher devlopper"><a href="#">Submission</a></li>
-				<li class="devlopper"><a href="#">Create</a></li>
-				<li><a href="#blog">Blog</a></li>
-			</ul>
-		</div>
-		
-		<script src="assets/js/global.js"></script>
-	</nav>
-	<!-- Navigation ends here -->
 
-	<!-- header starts here -->
-	<header class="cols-2-half theme-dark">
+        </div>
 
-		<div class="col-2 col-text slide-in-left-desktop">
+        <!-- Login form -->
+        <form action="assets/php/password.php" method="POST" class="login__form">
+            <div>
+                <h1 class="login__title">
+                    <span>Dorset</span> Calendar
+                </h1>
+                <p class="login__description">
+                    Please login to continue.
+                </p>
+            </div>
 
-			<h1>Welcome to Dorset Booking</h1>
-			<h2>Student and Teacher calendar</h2>
+            <!-- Input fields for email and password -->
+            <div>
+                <div class="login__inputs">
+                    <div>
+                        <label for="input-email" class="login__label">Email</label>
 
-			<div class="container-btn">
-				<a href="./login-page/index.html" class="btn btn-outline btn-soft"><span>Login</span><i
-						class="fas fa-arrow-right"></i></a>
-			</div>
+                        <input type="email" placeholder="EMAIL" required class="login__input" id="input-email">
 
-		</div>
+                    </div>
 
-		<div class="col-2 col-visual desktop-bleed-all slide-in-right-desktop">
-			<figure>
-				<img src="./assets/img/calendar.jpg" alt="Placeholder image">
-			</figure>
-		</div>
+                    <div>
+                        <label for="input-pass" class="login__label">Password</label>
 
-	</header>
-	<!-- header ends here -->
+                        <!-- Password input field with eye icon for toggle -->
+                        <div class="login__box">
+                            <input type="password" placeholder="PASSWORD" required class="login__input" id="input-pass">
+                            <i class="ri-eye-off-line login__eye" id="input-icon"></i>
+                        </div>
+                    </div>
+                </div>
 
-	<!-- main starts here -->
-	<main>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-	</main>
-	<!-- main ends here -->
+                <!-- Checkbox for 'Remember me' -->
+                <div class="login__check">
+                    <input type="checkbox" class="login__check-input" id="input-check">
+                    <label for="input-check" class="login__check-label">Remember me</label>
+                </div>
+            </div>
 
+            <!-- Login button and forgot password link -->
+            <div>
+                <div class="login__buttons">
+                    <button type="submit" class="login__button">Log In</button>
+                </div>
+                <a href="#" class="login__forgot">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Including main JavaScript file -->
+<script src="assets/js/main.js"></script>
 </body>
-
 </html>
