@@ -11,11 +11,11 @@
 header.theme-dark { background-color: var(--blue-000) }
 header.theme-dark h1 { color: var(--yellow-000) }
 header.theme-dark .container-btn a.btn:nth-child(1):link,
-header.theme-dark .container-btn a.btn:nth-child(1):visited { color: var(--white-000) }
+header.theme-dark .container-btn a.btn:nth-child(1):visited,
+header.theme-dark .container-btn a.btn:nth-child(1):active { color: var(--white-000)}
 
 header.theme-dark .container-btn a.btn:nth-child(1):focus,
-header.theme-dark .container-btn a.btn:nth-child(1):hover,
-header.theme-dark .container-btn a.btn:nth-child(1):active { color: var(--blue-000); background-color: var(--yellow-000) }
+header.theme-dark .container-btn a.btn:nth-child(1):hover { color: var(--blue-000); background-color: var(--yellow-000) }
  
 header.theme-dark h1 {
     font-family: 'Barlow Condensed', sans-serif;
