@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Here we check if the user is on the Data-Base
 
+            console.log(email); // show the email on the console
+            console.log(password); // shwo the password
+            console.log(rememberMe);
+
             window.location.href="assets/html/calendar.html";
             fetch('/login', {
                 method: 'POST',

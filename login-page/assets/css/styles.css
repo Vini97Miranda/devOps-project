@@ -8,7 +8,7 @@
   --first-color: hsl(244, 75%, 57%);
   --second-color: hsl(249, 64%, 47%);
   --title-color: hsl(244, 12%, 12%);
-  --text-color: hsl(244, 4%, 36%);
+  --text-color: hsl(0, 0%, 23%);
   --body-color: hsl(208, 97%, 85%);
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -38,7 +38,7 @@
 html
 
 {
-  background:linear-gradient(#14235d 60%, #ffff07 );
+  background-color : #0d143d;
 }
 body {
 
@@ -60,6 +60,8 @@ img {
 
 
 /*=============== LOGIN FORM ===============*/
+
+/* Login form styles */
 .login__content, .login__form, .login__inputs {
   display: grid;
 }
@@ -77,7 +79,7 @@ img {
 }
 .login__form {
   position: relative;
-  background-color: hsla(244, 16%, 92%, 0.6);
+  background-color: hsl(0, 0%, 95%);
   border: 2px solid hsla(244, 16%, 92%, 0.75);
   margin-inline: 1.5rem;
   row-gap: 1.25rem;
@@ -115,7 +117,7 @@ img {
   padding: 14px 12px;
   border-radius: 6px;
   border: 2px solid var(--text-color);
-  background-color: hsla(244, 16%, 92%, 0.6);
+  background-color: hsl(55.89deg 100% 55.3% / 60%);
   color: var(--title-color);
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);
@@ -177,7 +179,7 @@ img {
 .login__button {
   width: 100%;
   padding: 14px 2rem;
-  border-radius: 6px;
+  border-radius: 2px;
   background: linear-gradient(180deg, var(--first-color), var(--second-color));
   color: #fff;
   font-size: var(--small-font-size);
@@ -220,6 +222,8 @@ img {
     display: grid;
     place-items: center;
     margin:0;
+    position: relative;
+
   }
   .login__content {
     width: 1024px;
@@ -241,32 +245,40 @@ img {
   .login__content {
     height: 700px;
   }
+
   .login__form {
     row-gap: 2rem;
     padding: 3rem;
     border-radius: 1.25rem;
     border: 2.5px solid hsla(244, 16%, 92%, 0.75);
   }
+
   .login__description, .login__label, .login__button {
     font-size: var(--normal-font-size);
   }
+
   .login__inputs {
     row-gap: 1.25rem;
     margin-bottom: 0.75rem;
   }
+
   .login__input {
     border: 2.5px solid var(--text-color);
     padding: 1rem;
     font-size: var(--small-font-size);
   }
+
   .login__input:focus, .login__input:valid {
     border: 2.5px solid var(--first-color);
   }
+
   .login__button {
     padding-block: 1rem;
     margin-bottom: 1.25rem;
   }
+
   .login__button-ghost {
     border: 2.5px solid var(--first-color);
   }
 }
+

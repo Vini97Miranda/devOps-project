@@ -4,6 +4,17 @@
     .login__buttons{
         flex-direction: column;
     }
+    .circle-user
+    {
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 5vw;
+        height: 4vw;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+    }
 }
 
 /* For medium devices */
@@ -11,6 +22,17 @@
     .login__form{
         width: 450px;
         justify-self: center;
+    }
+    .circle-user
+    {
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 7vw;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        height: 5vw;
     }
 }
 
@@ -36,6 +58,18 @@
             margin-right: 4.5rem;
         }
     }
+    .circle-user
+    {
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 12vw;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
+        height: 7vw;
+    }
+
 }
 
 @media screen and (min-width: 1200px){
@@ -76,5 +110,16 @@
                 border: 2.5px solid var(--first-color);
             }
         }
+    }
+    .circle-user
+    {
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 15vw;
+        height: 13vw;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid black;
+        position: absolute;
     }
 }
