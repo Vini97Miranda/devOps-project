@@ -1,0 +1,34 @@
+Certainly! Here's a more concise version:
+
+**Test Case Title:** Verify Assessment Management
+
+1. **Preconditions:**
+   - Prototype application deployed.
+   - Logged in as a B.Sc. in Computing course lecturer.
+   - At least one assessment record exists.
+
+2. **Test Steps:**
+   - **Step 1:** Open the application.
+      - **Expected Result:** Calendar interface displayed.
+
+   - **Step 2:** Create a new assessment.
+      - **Expected Result:** Assessment added to the calendar.
+
+   - **Step 3:** Edit an assessment.
+      - **Expected Result:** Changes reflected in the calendar.
+
+   - **Step 4:** Delete an assessment.
+      - **Expected Result:** Assessment removed from the calendar.
+
+   - **Step 5:** Log in as a year 2 student.
+      - **Expected Result:** Access to student's academic year calendar.
+
+   - **Step 6:** View assessments on the student's calendar.
+      - **Expected Result:** Assessments displayed with details.
+
+   - **Step 7:** Attempt to edit or delete an assessment as a student.
+      - **Expected Result:** No option for student to edit or delete.
+
+3. **Postconditions:**
+   - Assessment management functions correctly for lecturers.
+   - Year 2 students can view assessments but cannot edit or delete.
