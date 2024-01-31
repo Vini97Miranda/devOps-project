@@ -70,11 +70,6 @@ body {
     margin: 0 20px;
 }
 
-.menu-logo img {
-    max-width: 100px;
-    flex-shrink: 0;
-}
-
 .menu-container a:hover {
     color: var(--yellow-000);
 }
@@ -86,6 +81,22 @@ body {
 .menu li {
     padding: 10px 0;
     font-size: 22px;
+}
+
+.teacher {
+    display: none;
+}
+
+.teacher-rev {
+    display: initial;
+}
+
+.devlopper {
+    display: none;
+}
+
+.devlopper-rev {
+    display: initial;
 }
 
 /* mobile styles */
