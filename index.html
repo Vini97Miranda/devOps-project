@@ -14,6 +14,7 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
 	<link rel="stylesheet" href="assets/css/global.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<!-- Google Fonts -->
 
@@ -32,19 +33,19 @@
 <body>
 	<!-- Navigation starts here -->
 	<nav class="menu-container">
-		<!-- logo -->
-		<div class="menu-logo"><img src="./assets/img/favicon-32x32.png" alt="Dorset logo"/></div>
-
 		<!-- menu items -->
-		<div class="menu">
-			<ul>
-				<li><a href="#home">Home</a></li>
-				<li><a href="#">Works</a></li>
-				<li class="teacher devlopper"><a href="#">Submission</a></li>
-				<li class="devlopper"><a href="#">Create</a></li>
-				<li><a href="#blog">Blog</a></li>
-			</ul>
-		</div>
+		<div class="topnav" id="myTopnav">
+			<img src="./assets/img/favicon-32x32.png" alt="logo"/>
+			<a class="init" href="#home">Home</a>
+			<a class="init" href="#">Works</a>
+			<a href="#" class="teacher developer">Create</a>
+			<a href="./dev-page/dev-page.html" class="developer">Admin</a>
+			<a class="init" href="#contact">Contact</a>
+			<a class="init" href="#about">About</a>
+			<a href="javascript:void(0);" class="icon" onclick="hamburger()">
+			  <i class="fa fa-bars"></i>
+			</a>
+		  </div>
 		
 		<script src="assets/js/global.js"></script>
 	</nav>
