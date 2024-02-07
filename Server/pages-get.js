@@ -6,6 +6,9 @@ const readFileAsync = promisify(fs.readFile);
 const READ_OPTIONS = { encoding: 'UTF-8' };
 
 const HTML_URL = `/Users/victoragahi/Documents/GitHub/devOps-project/`;
+// CHANGE BY YOUR PATH
+
+
 const INDEX_URL = join(HTML_URL,'index.html');
 const LOGIN_URL = join(HTML_URL,'/login-page/login-page.html');
 

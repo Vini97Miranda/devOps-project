@@ -16,6 +16,7 @@ const generate_pages = require('./pages-get.js');
 const PORT = 6969;
 
 const assetsPath = '/Users/victoragahi/Documents/GitHub/devOps-project/assets';
+// CHANGE BY YOUR PATH
 
 app.use('/assets/css', express.static(path.join(assetsPath, 'css')));
 app.use('/assets/img', express.static(path.join(assetsPath, 'img')));
@@ -44,8 +45,6 @@ app.get('/change-password', async (req, res) => {
 });
 
 
-
-
 app.post('/login-page', async (req, res) => {
     const { username, password, bool } = req.body;
     console.log('Username:', username);
@@ -65,9 +64,6 @@ app.post('/login-page', async (req, res) => {
 
 
 });
-
-
-
 
 // START SERVER
 app.listen(PORT, () => {
