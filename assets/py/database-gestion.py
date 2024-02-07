@@ -6,18 +6,22 @@ import os
 
 def add_user(username, password, remember):
 
-    conn = sqlite3.connect('../database/user_database.db')
+    conn = sqlite3.connect('../assets/database/user_database.db')
     cursor = conn.cursor()
+    cursor.execute('SELECT COUNT(*) FROM users WHERE username = ?', (username,))
+    user_count = cursor.fetchone()[0]
 
-
-    cursor.execute('''
-        INSERT INTO users (username, password, remember)
-        VALUES (?, ?, ?)
-    ''', (username, password, remember))
-
-
-    conn.commit()
-    conn.close()
+    if user_count == 0:
+        cursor.execute('''
+                INSERT INTO users (username, password, remember)
+                VALUES (?, ?, ?)
+            ''', (username, password, remember))
+        conn.commit()
+        conn.close()
+        return True
+    else:
+        conn.close()
+        return False
 
 def show_database():
 
@@ -52,22 +56,20 @@ def supp_file(file_path):
 
 if __name__ == "__main__":
 
-    file_path = 'data.txt'
+
     # ONLY IF YOU TEST IN THIS FILE WITH PYTHON COMPILER
-    # file_path = '../../js/data.txt'
     # database_path '../../database/user_database.db'
 
-    with open(file_path, 'r') as file:
-        data = json.load(file)
+    username = sys.argv[1]
+    password = sys.argv[2]
+    Remember = sys.argv[3]
 
-    username = data['username']
-    password = data['password']
-    Remember = data['bool']
+    print(add_user(username, password, Remember))
 
-    add_user(username,password,Remember)
-    supp_file(file_path)
+
 
     #show_database()
+    #clear_database()
 
 
 

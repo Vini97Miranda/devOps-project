@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (loginForm) {
         loginForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
+
+
+            event.preventDefault();
             const user = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const rememberMe = document.getElementById('rememberMeCheckbox').checked;
@@ -35,8 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 password: password,
                 bool: rememberMe
             };
-            add_user_on_database(data)
-
+            fetch('/login-page', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
             // Here we check if the user is on the Data-Base
 
             /*

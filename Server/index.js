@@ -4,6 +4,9 @@
 // express package
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const {PythonShell} = require('python-shell');
+
 
 // Create express application
 const app = express();
@@ -20,6 +23,7 @@ app.use('/assets/js', express.static(path.join(assetsPath, 'js')));
 app.use('/assets/php', express.static(path.join(assetsPath, 'php')));
 app.use('/assets/py', express.static(path.join(assetsPath, 'py')));
 app.use('/assets/database', express.static(path.join(assetsPath, 'database')));
+app.use(bodyParser.json());
 
 // Main Root
 app.get('/', async (req, res) => {
@@ -38,6 +42,32 @@ app.get('/change-password', async (req, res) => {
     const passwordHtml = await generate_pages("/login-page/change-password");
     res.send(passwordHtml);
 });
+
+
+
+
+app.post('/login-page', async (req, res) => {
+    const { username, password, bool } = req.body;
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Remember Me:', bool);
+    res.json({ status: 'Message received' });
+
+    const options = {
+        args: [username, password, bool]
+    };
+    PythonShell.run('../assets/py/database-gestion.py', options, function (err, result) {
+        if (err) {
+            throw err;
+        }
+    });
+
+
+
+});
+
+
+
 
 // START SERVER
 app.listen(PORT, () => {
