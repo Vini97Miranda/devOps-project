@@ -6,14 +6,16 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const {PythonShell} = require('python-shell');
+// Import Page
+const generate_pages = require('./pages-get.js');
 
-
+//IMPORT DATABASE
+const database = require('./database')
 // Create express application
 const app = express();
-
-// Import home Page
-const generate_pages = require('./pages-get.js');
 const PORT = 6969;
+
+
 
 const assetsPath = '/Users/victoragahi/Documents/GitHub/devOps-project/assets';
 // CHANGE BY YOUR PATH
@@ -21,9 +23,6 @@ const assetsPath = '/Users/victoragahi/Documents/GitHub/devOps-project/assets';
 app.use('/assets/css', express.static(path.join(assetsPath, 'css')));
 app.use('/assets/img', express.static(path.join(assetsPath, 'img')));
 app.use('/assets/js', express.static(path.join(assetsPath, 'js')));
-app.use('/assets/php', express.static(path.join(assetsPath, 'php')));
-app.use('/assets/py', express.static(path.join(assetsPath, 'py')));
-app.use('/assets/database', express.static(path.join(assetsPath, 'database')));
 app.use(bodyParser.json());
 
 // Main Root
@@ -36,6 +35,7 @@ app.get('/', async (req, res) => {
 app.get('/login-page', async (req, res) => {
     const LoginHtml = await generate_pages("/login-page/login-page");
     res.send(LoginHtml);
+
 });
 
 // Password Root
@@ -46,7 +46,10 @@ app.get('/change-password', async (req, res) => {
 
 
 app.post('/login-page', async (req, res) => {
-    const { username, password, bool } = req.body;
+    const {username, password, bool} = req.body;
+    await database(username,password);
+
+    /*
     console.log('Username:', username);
     console.log('Password:', password);
     console.log('Remember Me:', bool);
@@ -59,10 +62,7 @@ app.post('/login-page', async (req, res) => {
         if (err) {
             throw err;
         }
-    });
-
-
-
+    });*/
 });
 
 // START SERVER
