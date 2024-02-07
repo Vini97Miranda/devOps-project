@@ -1,0 +1,45 @@
+'use strict';
+/* eslint-env node, es6 */
+
+// express package
+const express = require('express');
+const path = require('path');
+
+// Create express application
+const app = express();
+
+// Import home Page
+const generate_pages = require('./pages-get.js');
+const PORT = 6969;
+
+const assetsPath = '/Users/victoragahi/Documents/GitHub/devOps-project/assets';
+
+app.use('/assets/css', express.static(path.join(assetsPath, 'css')));
+app.use('/assets/img', express.static(path.join(assetsPath, 'img')));
+app.use('/assets/js', express.static(path.join(assetsPath, 'js')));
+app.use('/assets/php', express.static(path.join(assetsPath, 'php')));
+app.use('/assets/py', express.static(path.join(assetsPath, 'py')));
+app.use('/assets/database', express.static(path.join(assetsPath, 'database')));
+
+// Main Root
+app.get('/', async (req, res) => {
+    const indexHtml = await generate_pages("index");
+    res.send(indexHtml);
+});
+
+// Root login
+app.get('/login-page', async (req, res) => {
+    const LoginHtml = await generate_pages("/login-page/login-page");
+    res.send(LoginHtml);
+});
+
+// Password Root
+app.get('/change-password', async (req, res) => {
+    const passwordHtml = await generate_pages("/login-page/change-password");
+    res.send(passwordHtml);
+});
+
+// START SERVER
+app.listen(PORT, () => {
+    console.log(`Server Start : http://localhost:${PORT}`);
+});

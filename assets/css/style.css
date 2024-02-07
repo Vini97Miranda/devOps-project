@@ -15,6 +15,7 @@
     padding: 4em;
     border-radius: 10%;
 }
+
 * {
     box-sizing: inherit;
 }
@@ -148,4 +149,101 @@ p {
     color: black;
     margin-left: 10px;
     border-bottom: 2px solid black;
+}
+
+.eye-icon {
+    position: absolute;
+    transform: translateY(-50%);
+    left: 80%;
+    bottom: 225px;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    .grid {
+        inline-size: 60%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 78%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    .grid {
+        inline-size: 60%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 247px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 660px) {
+    .grid {
+        inline-size: 70%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .grid {
+        inline-size: 80%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 580px) {
+    .grid {
+        inline-size: 90%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 235px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 470px) {
+    .grid {
+        inline-size: 100%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 74%;
+        bottom: 245px;
+        cursor: pointer;
+    }
 }
