@@ -1,10 +1,12 @@
+html { height: 100; font-size: 100%; font: inherit; vertical-align: baseline;;
+scroll-behavior: smooth; scroll-padding-top: 20px }
+
 :root {
     --blue-000: #14235d;
     --blue-100: #1a2c76;
     --yellow-000: #ff0;
 }
 
-/* ============== Do not delete this ========== */
 .section-selector-1 {
     background-color: var(--white-000)
 }
@@ -13,7 +15,6 @@
     margin-bottom: 16px
 }
 
-/* =============== Add your custom CSS below =========== */
 header.theme-dark {
     background-color: var(--blue-000)
 }
@@ -107,6 +108,7 @@ body {
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
+
     .topnav img {
         display: initial;
     }
@@ -119,10 +121,7 @@ body {
         float: right;
         display: block;
     }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
+    
     .topnav.responsive {
         position: relative;
     }
@@ -132,22 +131,27 @@ body {
     }
 
     .topnav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive a.teacher {
-        display: none;
-    }
-
-    .topnav.responsive a.developer {
-        display: none;
+        float: right;
+        display: block;
     }
 
     .topnav.responsive a.init {
-        float: none;
+        float: left;
         display: block;
-        text-align: left;
     } 
 }
+
+footer.theme-dark { background-color: var(--blue-000) }
+footer.theme-dark > ul.footer-links li a:link,
+footer.theme-dark > ul.footer-links li a:visited { text-decoration-color: var(--white-000) }
+
+footer.theme-dark > ul.footer-links li a:focus,
+footer.theme-dark > ul.footer-links li a:hover,
+footer.theme-dark > ul.footer-links li a:active { text-decoration-color: var(--yellow-000) }
+
+footer.theme-dark > ul.footer-links li a:link,
+footer.theme-dark > ul.footer-links li a:visited { color: var(--white-000) }
+
+footer.theme-dark > ul.footer-links li a:focus,
+footer.theme-dark > ul.footer-links li a:hover,
+footer.theme-dark > ul.footer-links li a:active { color: var(--yellow-000) }
