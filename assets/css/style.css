@@ -247,3 +247,7 @@ p {
         cursor: pointer;
     }
 }
+/*
+.slide-right{-webkit-animation:slide-right 1s ease-in both;animation:slide-right 1s ease-in both}
+ @-webkit-keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(100px);transform:translateX(100px)}}@keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(100px);transform:translateX(100px)}}
+ */

@@ -10,6 +10,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
 
 	<!-- Preload large image -->
+    <link rel="preload" href="./assets/img/calendar.jpg" as="image">
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="https://lunevedy.com/assets/2.0/css/lunevedy.min.css" />
@@ -32,7 +33,7 @@
 
 <body>
 	<!-- Navigation starts here -->
-	<nav class="menu-container">
+	<nav class="menu-container navbar">
 		<!-- menu items -->
 		<div class="topnav" id="myTopnav">
 			<img src="./assets/img/favicon-32x32.png" alt="logo" />
@@ -55,19 +56,20 @@
 	<header class="cols-2-half theme-dark">
 
 		<div class="col-2 col-text">
-			<h1>Welcome to Dorset Booking</h1>
-			<h2>Student and Teacher calendar</h2>
+			<h1 class="slide-right">Welcome to Dorset Booking</h1>
+			<h2 class="slide-right">Student and Teacher calendar</h2>
 
-			<div class="container-btn">
-				<a href="./login-page" class="btn btn-outline btn-soft"><span>Login</span><i
-						class="fas fa-arrow-right"></i></a>
+			<div class="container-btn slide-right">
+				<a href="login-page/login-page.html" class="btn btn-outline btn-soft">
+					<span>Login</span>
+					<i class="fas fa-arrow-right"></i></a>
 			</div>
 
 		</div>
 
 		<div class="col-2 col-visual desktop-bleed-all">
 			<figure>
-				<img src="./assets/img/calendar.jpg" alt="Placeholder image">
+				<img class="slide-tr" src="./assets/img/calendar.jpg" alt="Placeholder image">
 			</figure>
 		</div>
 
@@ -87,13 +89,12 @@
 	<!-- footer starts here -->
 	<footer class="footer-0 text-center-desktop text-center-mobile theme-dark" id="contact">
 
-		<h2>ABC Limited</h2>
-		<h3>Awesome and affordable products</h3>
+		<h2>Dorset Calendar</h2>
+		<h3>Awesome and afforadble calendar</h3>
 		<ul class="footer-links footer-links-uppercase">
 			<li><a href="#">Home</a></li>
-			<li><a href="#">Products</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="https://dorset.ie/">Dorset</a></li>
+			<li><a href="#">FAQ</a></li>
+			<li><a href="https://dorset.ie/">Dorset College</a></li>
 		</ul>
 
 
