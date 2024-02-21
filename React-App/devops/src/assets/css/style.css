@@ -1,0 +1,258 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css";
+
+
+
+
+.align{
+    display: grid;
+    place-items: center;
+    background-color: #161641;
+
+}
+.grid {
+    position: fixed;
+    inline-size: 90%;
+    margin-inline: auto;
+    max-inline-size: 30rem;
+    background-color: #c2c5c2;
+    align-items: center;
+    border: 3px solid black;
+    padding: 4em;
+    border-radius: 10%;
+}
+
+* {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+
+}
+body {
+    background: blue;
+    color: #606468;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    min-block-size: 100vh;
+}
+a {
+    color: #606468;
+    outline: 0;
+    text-decoration: none;
+}
+input {
+    background-image: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+input[type="submit"] {
+    cursor: pointer;
+    text-decoration: none;
+}
+.form {
+    display: grid;
+    gap: 0.975rem;
+    padding: 1em;
+}
+.form input[type="password"],
+.form input[type="text"],
+.submitButton {
+    inline-size: 100%;
+}
+.form_field {
+    display: flex;
+}
+.form_input {
+    flex: 1;
+}
+.login {
+    color: #000000;
+}
+.login label,
+.login input[type="text"],
+.login input[type="password"],
+.submitButton {
+    border-radius:0.25rem;
+    padding: 1rem;
+}
+.label-form {
+    background-color: #ffb707;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    padding-inline: 1.25rem;
+}
+.login input[type="password"],
+.login input[type="text"] {
+    background-color: #ffff54;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.login input[type="password"]:hover,
+.login input[type="text"]:hover {
+    background-color: #ffff7f;
+}
+.submitButton {
+    background-color: #ffb707;
+    color: #eee;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+.submitButton:hover {
+    transition: 0.5s;
+    background-color: #ffbf2a;
+}
+p {
+    margin-block: 0.5rem;
+}
+.text--center {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+
+.label-checkbox {
+    color:black;
+}
+.forgot-password
+{
+    color: black;
+    margin-left: 45px;
+}
+.forgot-password:hover
+{
+    color: black;
+    border-bottom: 2px solid black;
+}
+.user
+{
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+}
+.p-remember-password
+{
+    color: black;
+    margin-left: 10px;
+    border-bottom: 2px solid black;
+}
+
+.eye-icon {
+    position: absolute;
+    transform: translateY(-50%);
+    left: 80%;
+    bottom: 225px;
+    cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+    .grid {
+        inline-size: 60%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 78%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    .grid {
+        inline-size: 60%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 247px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 660px) {
+    .grid {
+        inline-size: 70%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .grid {
+        inline-size: 80%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 580px) {
+    .grid {
+        inline-size: 90%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 76%;
+        bottom: 235px;
+        cursor: pointer;
+    }
+
+}
+@media screen and (max-width: 470px) {
+    .grid {
+        inline-size: 100%;
+        max-inline-size: none;
+        padding: 4em;
+    }
+    .eye-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        left: 74%;
+        bottom: 245px;
+        cursor: pointer;
+    }
+}
+/*
+.slide-right{-webkit-animation:slide-right 1s ease-in both;animation:slide-right 1s ease-in both}
+ @-webkit-keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(100px);transform:translateX(100px)}}@keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(100px);transform:translateX(100px)}}
+ */
