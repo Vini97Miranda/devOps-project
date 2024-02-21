@@ -32,7 +32,7 @@ function HomePage() {
         adminPermission(2)
     }, []);
     return (
-        <>
+        <div className="body">
             <nav className="menu-container navbar">
                 <div className="topnav" id="myTopnav">
                     <img src={f32} alt="logo"/>
@@ -79,7 +79,7 @@ function HomePage() {
                     <p>Copyright © 2023 ABC Limited. All rights reserved.</p>
                 </div>
             </footer>
-        </>
+        </div>
     )
 }
 
