@@ -3,8 +3,7 @@ import './css/global.css';
 
 function DevPage() {
     return (
-        <>
-            <html>
+        <div>
             <head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
@@ -13,8 +12,7 @@ function DevPage() {
             <body>
             <p><i className="fa-solid fa-hammer"></i> DEV PAGE</p>
             </body>
-            </html>
-        </>
+        </div>
     );
 }
 

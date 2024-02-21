@@ -1,12 +1,13 @@
-const sqlite3 = require('sqlite3').verbose();
 
+import sqlite3 from 'sqlite3'
 
+class databaseClass {
+    constructor(path) {
+        this.DB_PATH = path;
 
-const DB_PATH = 'main_database.sqlite';
-function DatabaseVerif()
-{
-    function openDatabase() {
-        return new sqlite3.Database(DB_PATH, sqlite3.OPEN_READWRITE, (err) => {
+    }
+    openDatabase (){
+        return new sqlite3.Database(this.DB_PATH, sqlite3.OPEN_READWRITE, (err) => {
             if (err) {
                 console.error("Erreur lors de l'ouverture de la base de données", err.message);
             } else {
@@ -14,10 +15,9 @@ function DatabaseVerif()
             }
         });
     }
-    function delete_table(tableName,db)
-    {
+    delete_table(tableName, db) {
         const sql = `DROP TABLE IF EXISTS ${tableName}`;
-        db.run(sql, function(err) {
+        db.run(sql, function (err) {
             if (err) {
                 console.error("Erreur lors de la suppression de la table", err.message);
             } else {
@@ -33,7 +33,7 @@ function DatabaseVerif()
         });
     }
 
-    function add_teacher(username_, name_, surname_, password_, db) {
+    add_teacher(username_, name_, surname_, password_, db) {
         const sql = `INSERT INTO teachers(username, name, surname, password) VALUES (?, ?, ?, ?)`;
         db.run(sql, [username_, name_, surname_, password_], function (err) {
             if (err) {
@@ -45,31 +45,26 @@ function DatabaseVerif()
     }
 
 
-    function show_table(table_name, db) {
+
+    show_table(table_name, db) {
         db.serialize(() => {
             const sql = `SELECT * FROM ${table_name}`;
             db.each(sql, (err, row) => {
                 if (err) {
                     console.error("Erreur lors de la lecture des données", err.message);
-                }
-                else
-                {
+                } else {
                     console.log(JSON.stringify(row));
                 }
             });
         });
     }
 
-    function readData(username,password) {
+     readData(username, password) {
         console.log(username)
         console.log(password)
         const db = openDatabase();
-        add_teacher(username,username,username,password,db);
-        show_table("teachers",db)
+        this.add_teacher(username, username, username, password, db);
+        this.show_table("teachers", db)
     }
-
-    return(<></>)
 }
-
-
-export default DatabaseVerif
+export default databaseClass;

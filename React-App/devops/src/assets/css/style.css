@@ -160,7 +160,7 @@ p {
     position: absolute;
     transform: translateY(-50%);
     left: 80%;
-    bottom: 225px;
+    bottom: 218px;
     cursor: pointer;
 }
 @media screen and (max-width: 767px) {
