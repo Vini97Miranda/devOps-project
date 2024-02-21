@@ -56,5 +56,5 @@ npm install
 Running the Development Server
 To start the development server, run the following command:
 ```
-npm run start:start:gollumafaim
+npm run start:gollumafaim
 ```
