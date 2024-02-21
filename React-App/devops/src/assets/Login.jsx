@@ -30,11 +30,15 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(document.getElementById('username').value,document.getElementById('password').value);
+        // Data before hashing
+        // console.log(document.getElementById('username').value,document.getElementById('password').value);
+        
         const user = sha256(document.getElementById('username').value).toString();
         const password = sha256(document.getElementById('password').value).toString();
         const rememberMe = document.getElementById('rememberMeCheckbox').checked;
-        console.log(user, password);
+        
+        // Data post hashing
+        // console.log(user, password);
 
         const data = {
             username: user,

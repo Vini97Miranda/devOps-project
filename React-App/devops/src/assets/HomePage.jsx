@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './css/global.css';
 import f32 from "./img/favicon-32x32.png";
-import f16 from "./img/favicon-16x16.png";
 import cal from "./img/calendar.jpg";
 
 function adminPermission(token = 2) {
@@ -42,6 +41,7 @@ function HomePage() {
                     <a className="developer" href="./dev-page">Admin</a>
                     <a className="init" href="#contact">Contact</a>
                     <a className="init" href="#about">About</a>
+                    <a className="init" href="./schedule-add">Add Event</a>
                 </div>
             </nav>
             <header className="cols-2-half theme-dark">
