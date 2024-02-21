@@ -1,13 +1,10 @@
 import React, { useEffect } from "react";
 import './css/style.css'
 import user from "./img/user-logo.png"
-import sqlite3 from 'sqlite3'
-import databaseClass from "./db/database";
 
 function Login() {
 
-    const sq = sqlite3.verbose()
-    const DataC= databaseClass("db/main_database.sqlite");
+
 
 
 
@@ -45,7 +42,6 @@ function Login() {
             password: password,
             bool: rememberMe
         };
-        DataC.readData(data.username,data.password)
 
     };
 
