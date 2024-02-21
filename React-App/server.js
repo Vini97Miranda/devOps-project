@@ -16,6 +16,10 @@ app.post("/login", async (req, res) => {
     res.json({ message: "Data received successfully", username, password, bool });
     await database(username,password);
 });
+app.post("/password", async (req, res) => {
+    const { username, password, bool } = req.body;
+    console.log(username)
+});
 
 app.listen(8000, () => {
     console.log(`Server is running on port 8000.`);
