@@ -1,12 +1,9 @@
 import React, { useEffect } from "react";
+import sha256 from "crypto-js/sha256";
 import './css/style.css'
 import user from "./img/user-logo.png"
 
 function Login() {
-
-
-
-
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -33,9 +30,11 @@ function Login() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const user = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
+        console.log(document.getElementById('username').value,document.getElementById('password').value);
+        const user = sha256(document.getElementById('username').value).toString();
+        const password = sha256(document.getElementById('password').value).toString();
         const rememberMe = document.getElementById('rememberMeCheckbox').checked;
+        console.log(user, password);
 
         const data = {
             username: user,

@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (loginForm) {
         loginForm.addEventListener('submit', function (event) {
             event.preventDefault();
-            const user = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            const user = sha256(document.getElementById('username').value);
+            const password = sha256(document.getElementById('password').value);
             const rememberMe = document.getElementById('rememberMeCheckbox').checked;
-
+            
             const data = {
                 username: user,
                 password: password,

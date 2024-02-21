@@ -60,15 +60,15 @@ if __name__ == "__main__":
     # ONLY IF YOU TEST IN THIS FILE WITH PYTHON COMPILER
     # database_path '../../database/user_database.db'
 
+    '''
     username = sys.argv[1]
     password = sys.argv[2]
     Remember = sys.argv[3]
 
     print(add_user(username, password, Remember))
-
-
-
-    #show_database()
+    '''
+    
+    show_database()
     #clear_database()
 
 
