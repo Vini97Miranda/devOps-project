@@ -163,6 +163,16 @@ p {
     bottom: 218px;
     cursor: pointer;
 }
+.icon {
+    scale:400%;
+    width:0px;
+    padding-left: 60px;;    
+    height:30px;
+}
+.inputInstru{
+    text-align-last: center;
+    /*padding-left:70px;*/
+}
 @media screen and (max-width: 767px) {
     .grid {
         inline-size: 60%;
