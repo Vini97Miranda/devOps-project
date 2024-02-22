@@ -46,7 +46,7 @@ git clone https://github.com/Vini97Miranda/devOps-project.git
 Navigate to the project directory:
 
 ```
-cd devOps-project/React-app/devops
+cd devOps-project/React-app/
 ```
 
 Install dependencies:
@@ -56,5 +56,5 @@ npm install
 Running the Development Server
 To start the development server, run the following command:
 ```
-npm start
+npm run start:gollumafaim
 ```

@@ -28,7 +28,7 @@ function Login() {
         }
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         // Data before hashing
         // console.log(document.getElementById('username').value,document.getElementById('password').value);
@@ -36,16 +36,29 @@ function Login() {
         const user = document.getElementById('username').value.toString();
         const password = sha256(document.getElementById('password').value).toString();
         const rememberMe = document.getElementById('rememberMeCheckbox').checked;
-        
-        // Data post hashing
-        // console.log(user, password);
 
         const data = {
             username: user,
             password: password,
             bool: rememberMe
         };
+        try {
+            const response = await fetch('http://localhost:8000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
 
+            if (response.ok) {
+                console.log('Login successful');
+            } else {
+                console.error('Login failed');
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+        }
     };
 
     useEffect(() => {
