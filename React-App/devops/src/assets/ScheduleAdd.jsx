@@ -1,9 +1,8 @@
-import React, { ChangeEvent,useState ,useEffect } from "react";
+import React, { ChangeEvent,useState /*,useEffect*/ } from "react";
 import DatePicker from "react-datepicker";
-import DateTimePicker from 'react-datetime-picker'
+//import DateTimePicker from 'react-datetime-picker'
 import "react-datepicker/dist/react-datepicker.css";
 import './css/style.css'
-import user from "./img/user-logo.png"
 
 function AddEvent() {
     
@@ -14,7 +13,6 @@ function AddEvent() {
     const [startDate, endDate] = dateRange;
     const [time, setTime] = useState("12:00");
     const [fileList, setFileList] = useState([]);
-      // 👇 files is not an array, but it's iterable, spread to get an array of files
     const files = fileList ? [...fileList] : [];
     const [rmButton,setrmButton] = useState(null);
     const TimeInput = ({time}) => (
@@ -45,7 +43,7 @@ function AddEvent() {
         setrmButton(<button class="inputInstru" onClick={removeFiles} >Remove files</button>);
         setFileList(e.target.files);
     }
-    
+    /*
     const handleUploadClick = () => {
         if (!fileList) {
         return;
@@ -58,7 +56,7 @@ function AddEvent() {
         });
 
         // 👇 Uploading the files using the fetch API to the server
-        fetch('https://httpbin.org/post', {
+        fetch('https://httpbin.org/post ', {
         method: 'POST',
         body: data,
         })
@@ -66,7 +64,7 @@ function AddEvent() {
         .then((data) => console.log(data))
         .catch((err) => console.error(err));
   };
-
+*/
     const handleSubmit = (event) => {
         event.preventDefault();
         /*
@@ -83,9 +81,9 @@ function AddEvent() {
             username: user,
         };
 
-        */
+        */      
     };
-    
+
 
     return (
         <html>
@@ -115,7 +113,7 @@ function AddEvent() {
                     <ul>
                         {files.map((file, i) => (
                         <li key={i}>
-                            {file.name} - {file.size/1000} Ko
+                            {file.name} - {file.size/1000} Ko 
                         </li>
                         ))}
                     </ul>
@@ -145,6 +143,8 @@ function AddEvent() {
                         { date: "2024-03-17", holidayName: "St-Patrick" },
                     ]}
                     placeholderText="Input dates for the assignement" required/>
+                <h3 class="inputInstru">Type a deadline time</h3>
+                <input class="inputInstru" type="time"></input>
                 <div className="form_field">
                     <button className="submitButton" type="submit">SUBMIT TO STUDENTS</button>
                 </div>

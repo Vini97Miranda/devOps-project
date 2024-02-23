@@ -5,9 +5,6 @@ import Login from "./assets/Login";
 import ChangePassword from "./assets/ChangePassword";
 import DevPage from "./assets/DevPage";
 import ScheduleAdd from "./assets/ScheduleAdd";
-
-
-
 function App() {
   return (
       <Routes>

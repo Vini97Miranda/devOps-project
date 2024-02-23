@@ -6,7 +6,7 @@ function ChangePassword() {
     const handleSubmitPassword = async (event) => {
         event.preventDefault();
 
-        const user = sha256(document.getElementById('mail').value).toString();
+        const user = document.getElementById('mail').value;
 
         const data = {
             username: user,
