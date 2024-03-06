@@ -13,8 +13,16 @@ app.get("/message", (req, res) => {
 
 app.post("/login", async (req, res) => {
     const { username, password, bool } = req.body;
-    res.json({ message: "Data received successfully", username, password, bool });
-    await database(username,password);
+    var userType = await database(username,password);
+    console.log(userType);
+    var redirectUrl;
+    if (userType === 'teacher') {
+        redirectUrl = 'http://localhost:3000/dev-page';
+    } else {
+        redirectUrl = 'http://localhost:3000/home-page';
+    }
+
+    res.json({ message: "Data received successfully", redirectUrl });
 });
 app.post("/password", async (req, res) => {
     const { username, password, bool } = req.body;

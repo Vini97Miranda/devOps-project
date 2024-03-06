@@ -58,12 +58,39 @@ function show_table(table_name, db) {
     });
 }
 
-function readData(username,password) {
-    console.log(username)
-    console.log(password)
-    const db = openDatabase();
-    add_teacher(username,username,username,password,db);
-    show_table("teachers",db)
+function readData(username, password) {
+    return new Promise((resolve, reject) => {
+        const db = openDatabase();
+        let sql = `SELECT * FROM teachers WHERE username = ? AND password = ?`;
+        db.get(sql, [username, password], (err, row) => {
+            if (err) {
+                console.error("Erreur lors de la lecture des données", err.message);
+                resolve(0);
+            } else {
+                if (row) {
+                    console.log('Utilisateur trouvé dans la table teachers:', JSON.stringify(row));
+                    resolve(1);
+                }
+                else {
+                    sql = `SELECT * FROM students WHERE username = ? AND password = ?`;
+                    db.get(sql, [username, password], (err, row) => {
+                        if (err) {
+                            console.error("Erreur lors de la lecture des données", err.message);
+                            resolve(0);
+                        } else {
+                            if (row) {
+                                console.log('Utilisateur trouvé dans la table students:', JSON.stringify(row));
+                                resolve(2);
+                            } else {
+                                resolve(0);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+        db.close();
+    });
 }
 module.exports = (username,password) => {
     return readData(username,password);

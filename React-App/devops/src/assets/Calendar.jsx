@@ -25,7 +25,7 @@ function Calendar() {
 
 
     return (
-        <div className='container'>
+        <div className='container2'>
             <h1 className='mois'>{month}</h1>
             <div className='grille'>
                 {week.map((item)=>(
