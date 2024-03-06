@@ -42,6 +42,7 @@ function HomePage() {
                     <a className="init" href="#contact">Contact</a>
                     <a className="init" href="#about">About</a>
                     <a className="init" href="./schedule-add">Add Event</a>
+                    <a className="init" href="./SubmitStu">Submit an assignement</a>
                 </div>
             </nav>
             <header className="cols-2-half theme-dark">

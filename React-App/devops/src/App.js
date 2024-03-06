@@ -5,6 +5,7 @@ import Login from "./assets/Login";
 import ChangePassword from "./assets/ChangePassword";
 import DevPage from "./assets/DevPage";
 import ScheduleAdd from "./assets/ScheduleAdd";
+import SubmitStu from "./assets/SubmitStu";
 function App() {
   return (
       <Routes>
@@ -13,6 +14,7 @@ function App() {
           <Route path="/change-password" index element={<ChangePassword />} />
           <Route path="/dev-page" index element={<DevPage />} />
           <Route path="/schedule-add" index element={<ScheduleAdd />} />
+          <Route path="/SubmitStu" index element={<SubmitStu />} />
       </Routes>
   );
 }
