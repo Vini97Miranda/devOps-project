@@ -49,10 +49,7 @@ Navigate to the project directory:
 cd devOps-project/React-app/
 ```
 
-Install dependencies:
-```
-npm install
-```
+
 Running the Development Server
 To start the development server, run the following command:
 ```

@@ -8,7 +8,7 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "gollummange": "concurrently \"npm run dev\" \"cd devops && npm start\"",
-    "gollumfaitlescourses ": "concurrently \"cd devops && npm install\"",
+    "gollumfaitlescourses": "concurrently \"cd devops && npm install\"",
     "gollumafaim": "concurrently \"npm install\""
   },
   "keywords": [],
