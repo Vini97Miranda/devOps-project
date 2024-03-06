@@ -1,0 +1,34 @@
+.mois{
+    background-color: #14235d;
+    color: #FF0;
+    padding-left: 10px;
+}
+
+.container{
+    background-color: white;
+    display: grid;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.jourSemaine{
+    margin-right: 10px;
+}
+
+.grille{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto ;
+}
+
+.caseJour{
+    border: 1px;
+    border-style: solid;
+    padding: 3px;
+    height: 100px;
+    width: 180px;
+}
+
+.containerSemaine{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto ;
+}
