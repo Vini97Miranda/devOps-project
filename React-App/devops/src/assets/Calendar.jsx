@@ -1,7 +1,9 @@
 import React from 'react';
 import './css/calendar.css';
+import f32 from "./img/favicon-32x32.png";
 
 function Calendar() {
+    let courses = [["Math", "red"], ["Prog", "green"], ["Algo", "yellow"], ["Archi", "orange"]];
     let date = new Date();
     let day = date.getDate();
     let monthInt = date.getMonth();
@@ -25,23 +27,39 @@ function Calendar() {
 
 
     return (
-        <div className='container'>
-            <h1 className='mois'>{month}</h1>
-            <div className='grille'>
-                {week.map((item)=>(
+        <div className="container">
+            <div className="left-section">
+                <div className="title">  
+                    <img src={f32} alt="logo"/>
+                    <h1>Dorset College<br/>Calendar</h1>
+                </div>
+                <a href="#">New Event</a>
+                <div className="course-box">
+                    {courses.map((item)=>(
+                        <div className="course">
+                            <div className="color-box" style={{backgroundColor: item[1]}}></div>
+                            <p>{item[0]}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
-                    <p className='jourSemaine'>{item}</p>
+            <div className='right-section'>
+                <h1 className='mois'>{month}</h1>
+                <div className="bar"></div>
+                <div className="grille">
+                    {week.map((item)=>(
+                        <p className='jourSemaine'>{item}</p>
+                    ))}
 
-                ))}
-                {days.map((item)=>(
-
-                    item == 0 && <div className='caseJour' style={{
-                        visibility: "hidden"}}></div> ||
-                    item == day && <div className='caseJour' style={{color: "red"}}>{item}</div> ||
-                    <div className='caseJour'>{item}</div>
-
-                ))
-                }
+                    {days.map((item)=>(
+                        item == 0 && <div className='caseJour' style={{
+                            visibility: "hidden"}}></div> ||
+                        item == day && <div className='caseJour' style={{color: "red"}}>{item}</div> ||
+                        <div className='caseJour'>{item}</div>
+                    ))
+                    }
+                </div>
             </div>
         </div>
     );

@@ -11,11 +11,24 @@ app.get("/message", (req, res) => {
     res.json({ message: "Hello from server!" });
 });
 
+let redirectUrl = '';
 app.post("/login", async (req, res) => {
     const { username, password, bool } = req.body;
-    res.json({ message: "Data received successfully", username, password, bool });
-    await database(username,password);
+    var userType = await database(username,password);
+    console.log(userType);
+    redirectUrl = userType;
+
+    res.json({ message: "Data received successfully", redirectUrl });
 });
+
+app.get("/login_get", async (req, res) => {
+    const { username, password, bool } = req.body;
+    var userType = await database(username, password);
+    console.log(userType);
+    res.json({message: redirectUrl});
+});
+
+
 app.post("/password", async (req, res) => {
     const { username, password, bool } = req.body;
     console.log(username)
