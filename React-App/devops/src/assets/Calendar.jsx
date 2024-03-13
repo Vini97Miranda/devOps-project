@@ -2,8 +2,10 @@ import React from 'react';
 import './css/calendar.css';
 import f32 from "./img/favicon-32x32.png";
 
+
 function Calendar() {
     let courses = [["Math", "red"], ["Prog", "green"], ["Algo", "yellow"], ["Archi", "orange"]];
+
     let date = new Date();
     let day = date.getDate();
     let monthInt = date.getMonth();
@@ -22,12 +24,8 @@ function Calendar() {
         days.push(i);
     }
 
-
-
-
-
     return (
-        <div className="container">
+        <div className="container3">
             <div className="left-section">
                 <div className="title">  
                     <img src={f32} alt="logo"/>
@@ -62,6 +60,7 @@ function Calendar() {
                 </div>
             </div>
         </div>
+
     );
 }
 
