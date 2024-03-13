@@ -7,6 +7,7 @@ import DevPage from "./assets/DevPage";
 import ScheduleAdd from "./assets/ScheduleAdd";
 import SubmitStu from "./assets/SubmitStu";
 import Calendar from "./assets/Calendar";
+import Grades from "./assets/Grades";
 function App() {
   return (
       <Routes>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/calendar" index element={<Calendar />} />
           <Route path="/schedule-add" index element={<ScheduleAdd />} />
           <Route path="/SubmitStu" index element={<SubmitStu />} />
+          <Route path="/grades" index element={<Grades />} />
       </Routes>
   );
 }

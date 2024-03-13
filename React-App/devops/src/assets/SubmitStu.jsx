@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 //import DateTimePicker from 'react-datetime-picker'
 import "react-datepicker/dist/react-datepicker.css";
 import './css/style.css'
+import { } from "mobiscroll-react";   
 
 function SubmitStu() {
     
@@ -79,7 +80,7 @@ function SubmitStu() {
             <form method="POST" className="lf form" onSubmit={handleSubmit}>
             <i class="icon fa-solid fa-file-pen"></i>
                 <h3 class="inputInstru">Choose a class</h3>
-                <select class="inputInstru" value={stuClass} onChange={handlestuClass} required>
+                <select class="inputInstru" value={stuClass} onChange={handlestuClass} required label="Class" inputStyle="box">
                     <option hidden>---</option>
                     <option value="A1">A1</option>
                     <option value="A2">A2</option>

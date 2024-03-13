@@ -9,6 +9,7 @@
     "axios": "^1.6.7",
     "crypto-js": "4.0.0",
     "js-sha256": "^0.11.0",
+    "mobiscroll-react": "^4.0.0",
     "react": "^18.2.0",
     "react-datepicker": "^6.1.0",
     "react-datetime-picker": "^5.6.0",
