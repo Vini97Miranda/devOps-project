@@ -1,20 +1,111 @@
-.mois{
-    background-color: #14235d;
-    color: #FF0;
-    padding-left: 10px;
+/* Page */
+.container {
+    display: flex;
+    height: 100vh;
+}
+  
+.left-section,
+.right-section {
+    height: 100vh;
 }
 
-.container2{
-    background-color: white;
-    display: grid;
-    padding-left: 100px;
-    padding-right: 100px;
+/* Left Section */
+.left-section {
+    flex-basis: 35%;
+    background-color: #14235d;
+    padding-top: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Title */
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+.title img {
+    width: 60px;
+    height: 60px;
+}
+
+.title h1 {
+    text-align: center;
+    color: #FFF;
+}
+
+/* Left Links */
+.left-section a {
+    font-size: large;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+}
+
+.left-section a:focus,
+.left-section a:hover {
+    color: #FF0;
+}
+
+/* Left Courses */
+.course-box {
+    padding-top: 100px;
+}
+
+.course {
+    display: flex;
+    justify-content: left;
+}
+
+.color-box {
+    width: 10px;
+    height: 10px;
+    border-radius: 20%;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.course p {
+    font-size: medium;
+    display: block;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    align-self: center;
+}
+
+/* Right section */
+.right-section {
+    flex-basis: 65%;
+    background-color: #FFF;
+    padding: 30px;
+}
+
+.bar {
+    height: 2px;
+    color: #000;
+}
+
+/* Calendar */
+.mois{
+    background-color: #FFF;
+    color: #000;
+    padding-left: 10px;
 }
 
 .jourSemaine{
     margin-right: 10px;
 }
 
+.bar {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
 .grille{
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto ;
@@ -24,8 +115,8 @@
     border: 1px;
     border-style: solid;
     padding: 3px;
-    height: 100px;
-    width: 180px;
+    height: 90px;
+    width: 150px;
 }
 
 .containerSemaine{
