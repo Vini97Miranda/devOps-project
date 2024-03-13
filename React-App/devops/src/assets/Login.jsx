@@ -50,9 +50,34 @@ function Login() {
                 },
                 body: JSON.stringify(data)
             });
+            console.log("burp");
+            const responseData = await fetch('http://localhost:8000/login_get', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
 
-            if (response.ok) {
-                console.log('Login successful');
+            if (responseData.ok) {
+                const data = await responseData.json();
+                if (data.message == "1")
+                {
+                    console.log('Login successful');
+                    window.location.href = "/schedule-add";
+                }
+                else
+                {
+                    if (data.message == "2")
+                    {
+                        console.log('Login successful');
+                        window.location.href = "/calendar";
+                    }
+                    else
+                    {
+                        console.error('Login failed');
+                    }
+                }
+
             } else {
                 console.error('Login failed');
             }

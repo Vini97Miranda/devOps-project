@@ -11,19 +11,24 @@ app.get("/message", (req, res) => {
     res.json({ message: "Hello from server!" });
 });
 
+let redirectUrl = '';
 app.post("/login", async (req, res) => {
     const { username, password, bool } = req.body;
     var userType = await database(username,password);
     console.log(userType);
-    var redirectUrl;
-    if (userType === 'teacher') {
-        redirectUrl = 'http://localhost:3000/dev-page';
-    } else {
-        redirectUrl = 'http://localhost:3000/home-page';
-    }
+    redirectUrl = userType;
 
     res.json({ message: "Data received successfully", redirectUrl });
 });
+
+app.get("/login_get", async (req, res) => {
+    const { username, password, bool } = req.body;
+    var userType = await database(username, password);
+    console.log(userType);
+    res.json({message: redirectUrl});
+});
+
+
 app.post("/password", async (req, res) => {
     const { username, password, bool } = req.body;
     console.log(username)
