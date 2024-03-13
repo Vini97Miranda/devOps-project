@@ -60,6 +60,7 @@ function show_table(table_name, db) {
 
 function readData(username, password) {
     return new Promise((resolve, reject) => {
+
         const db = openDatabase();
         let sql = `SELECT * FROM teachers WHERE username = ? AND password = ?`;
         db.get(sql, [username, password], (err, row) => {
