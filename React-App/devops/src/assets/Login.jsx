@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import sha256 from "crypto-js/sha256";
 import './css/style.css'
 import user from "./img/user-logo.png"
+import { setFeatureStatus } from '../globalconfig';
 
-function Login() {
+
+function Login({updateFeatureStatus}) {
+
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -11,7 +14,14 @@ function Login() {
         script.type = 'text/javascript';
         script.async = true;
         document.body.appendChild(script);
-    }, [])
+    }, []);
+
+    const [edit, setEdit] = useState(false);
+
+    const handleFeatureUpdate = () => {
+        setEdit(true);
+        updateFeatureStatus(true);
+    };
 
     const togglePasswordVisibility = () => {
         const passwordField = document.getElementById("password");
@@ -30,9 +40,7 @@ function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        // Data before hashing
-        // console.log(document.getElementById('username').value,document.getElementById('password').value);
-        
+
         const user = document.getElementById('username').value.toString();
         const password = sha256(document.getElementById('password').value).toString();
         const rememberMe = document.getElementById('rememberMeCheckbox').checked;
@@ -60,24 +68,18 @@ function Login() {
 
             if (responseData.ok) {
                 const data = await responseData.json();
-                if (data.message == "1")
-                {
+                console.log(data.message)
+                if (data.message == "1") {
                     console.log('Login successful');
                     window.location.href = "/schedule-add";
-                }
-                else
-                {
-                    if (data.message == "2")
-                    {
-                        console.log('Login successful');
-                        window.location.href = "/calendar";
-                    }
-                    else
-                    {
-                        console.error('Login failed');
-                    }
-                }
+                } else if (data.message == "2") {
+                    handleFeatureUpdate()
+                    console.log('Login successful');
 
+
+                } else {
+                    console.error('Login failed');
+                }
             } else {
                 console.error('Login failed');
             }

@@ -1,9 +1,9 @@
 /* Page */
-.container {
+.container3 {
     display: flex;
     height: 100vh;
 }
-  
+
 .left-section,
 .right-section {
     height: 100vh;
