@@ -28,6 +28,53 @@ function create_student_table(db)
     });
 }
 
+function add_elt_teaching_classes(id_teacher, id_class, db)
+{
+    const sql = `INSERT INTO teaching_classes(id_teacher, id_class) VALUES (?, ?)`;
+    db.run(sql, [id_teacher, id_class], function(err) {
+        if (err) {
+            console.error("Erreur lors de l'ajout de l'élément dans teaching_class", err.message);
+        } else {
+            console.log(`Élément ajouté avec l'ID: ${this.lastID}`);
+        }
+    });
+}
+
+function add_elt_classes(id_class, name, db)
+{
+    const sql = `INSERT INTO classes(id_class, name) VALUES (?, ?)`;
+    db.run(sql, [id_class, name], function(err) {
+        if (err) {
+            console.error("Erreur lors de l'ajout de l'élément dans classes", err.message);
+        } else {
+            console.log(`Élément ajouté avec l'ID: ${this.lastID}`);
+        }
+    });
+}
+
+function add_elt_admin(username, password, db)
+{
+    const sql = `INSERT INTO admin(username, password) VALUES (?, ?)`;
+    db.run(sql, [username, password], function(err) {
+        if (err) {
+            console.error("Erreur lors de l'ajout de l'élément dans admin", err.message);
+        } else {
+            console.log(`Élément ajouté avec l'ID: ${this.lastID}`);
+        }
+    });
+}
+
+function add_elt_event(id_classe,date_start,date_end,db)
+{
+    const sql = `INSERT INTO event(id_classe,date_start,date_end) VALUES (?,?,?)`;
+    db.run(sql, [id_classe,date_start,date_end], function(err) {
+        if (err) {
+            console.error("Erreur lors de l'ajout de l'élément dans event", err.message);
+        } else {
+            console.log(`Élément ajouté avec l'ID: ${this.lastID}`);
+        }
+    });
+}
 
 function delete_table(tableName,db)
 {
@@ -125,4 +172,9 @@ module.exports = (username,password) => {
     return readData(username,password);
 };
 
+module.exports.add_student = (username, password) => {
+    const db = openDatabase();
+    add_student(username, password, db);
+    db.close();
+};
 

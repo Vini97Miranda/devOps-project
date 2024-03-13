@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './css/style.css'
 
+
 function AddEvent() {
     
     const [subject, setSubject] = useState("---","---");
@@ -65,23 +66,24 @@ function AddEvent() {
         .catch((err) => console.error(err));
   };
 */
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        /*
-
-        // Data before hashing
-        // console.log(document.getElementById('username').value,document.getElementById('password').value);
-        
-        const user = sha256(document.getElementById('username').value).toString();
-        
-        // Data post hashing
-        // console.log(user, password);
-
+        const classe = document.getElementById("class_select").value;
+        const dates = startDate.toDateString() + " to " + endDate.toDateString();
+        const time = document.getElementById("time").value;
         const data = {
-            username: user,
+            classes: classe,
+            date_start: startDate,
+            date_end: endDate,
+            time: time.toString(),
         };
-
-        */      
+        const response = await fetch('http://localhost:8000/add_event', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
     };
 
 
@@ -92,7 +94,7 @@ function AddEvent() {
             <form method="POST" className="lf form" onSubmit={handleSubmit}>
             <i class="icon fa-solid fa-file-pen"></i>
                 <h3 class="inputInstru">Choose a class</h3>
-                <select class="inputInstru" value={stuClass} onChange={handlestuClass} required>
+                <select id= "class_select"class="inputInstru" value={stuClass} onChange={handlestuClass} required>
                     <option hidden>---</option>
                     <option value="A1">A1</option>
                     <option value="A2">A2</option>
@@ -144,7 +146,7 @@ function AddEvent() {
                     ]}
                     placeholderText="Input dates for the assignement" required/>
                 <h3 class="inputInstru">Type a deadline time</h3>
-                <input class="inputInstru" type="time"></input>
+                <input id = "time" class="inputInstru" type="time"></input>
                 <div className="form_field">
                     <button className="submitButton" type="submit">SUBMIT TO STUDENTS</button>
                 </div>
