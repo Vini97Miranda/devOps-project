@@ -48,44 +48,17 @@ function Login({updateFeatureStatus}) {
         const data = {
             username: user,
             password: password,
-            bool: rememberMe
         };
-        try {
-            const response = await fetch('http://localhost:8000/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-            console.log("burp");
-            const responseData = await fetch('http://localhost:8000/login_get', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            });
-
-            if (responseData.ok) {
-                const data = await responseData.json();
-                console.log(data.message)
-                if (data.message == "1") {
-                    console.log('Login successful');
-                    window.location.href = "/schedule-add";
-                } else if (data.message == "2") {
-                    handleFeatureUpdate()
-                    console.log('Login successful');
-
-
-                } else {
-                    console.error('Login failed');
-                }
-            } else {
-                console.error('Login failed');
-            }
-        } catch (error) {
-            console.error('Error during login:', error);
-        }
+        const res = await fetch('http://localhost:8055/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user,
+                password,
+            })
+        });
     };
 
     useEffect(() => {
