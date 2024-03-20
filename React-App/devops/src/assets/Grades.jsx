@@ -1,6 +1,6 @@
 import React from "react";
-import './css/grades.css'
-import { } from "mobiscroll-react";   
+import './css/grades.css';
+import { } from "mobiscroll-react"; 
 
 const infos = [["DevOps", "A"], ["Web Development", "A"], ["Data Structures", "A"], ["Algorithms", "A"], ["Database Management", "A"], ["Software Engineering", "A"], ["Operating Systems", "A"], ["Computer Networks", "A"], ["Computer Architecture", "A"], ["Discrete Mathematics", "A"]];
 const colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#9400D3"];

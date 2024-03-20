@@ -36,12 +36,10 @@ function HomePage() {
                 <div className="topnav" id="myTopnav">
                     <img src={f32} alt="logo"/>
                     <a className="init" href="#home">Home</a>
-                    <a className="init" href="#">Works</a>
-                    <a className="teacher developer" href="#">Create</a>
                     <a className="developer" href="./dev-page">Admin</a>
                     <a className="init" href="#contact">Contact</a>
                     <a className="init" href="#about">About</a>
-                    <a className="init" href="./schedule-add">Add Event</a>
+                    <a className="init" href="./calendar">Calendar</a>
                     <a className="init" href="./SubmitStu">Submit an assignement</a>
                 </div>
             </nav>
