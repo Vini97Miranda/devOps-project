@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import sha256 from "crypto-js/sha256";
 import './css/style.css'
 import user from "./img/user-logo.png"
-import { setFeatureStatus } from '../globalconfig';
 
 
-function Login({updateFeatureStatus}) {
+
+function Login() {
+
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [body, setBody] = useState(null);
 
 
     useEffect(() => {
@@ -16,12 +20,6 @@ function Login({updateFeatureStatus}) {
         document.body.appendChild(script);
     }, []);
 
-    const [edit, setEdit] = useState(false);
-
-    const handleFeatureUpdate = () => {
-        setEdit(true);
-        updateFeatureStatus(true);
-    };
 
     const togglePasswordVisibility = () => {
         const passwordField = document.getElementById("password");
@@ -38,29 +36,33 @@ function Login({updateFeatureStatus}) {
         }
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-        const user = document.getElementById('username').value.toString();
-        const password = sha256(document.getElementById('password').value).toString();
-        const rememberMe = document.getElementById('rememberMeCheckbox').checked;
-
-        const data = {
-            username: user,
-            password: password,
-        };
+    async function login() {
         const res = await fetch('http://localhost:8055/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                user,
+                email,
                 password,
             })
         });
-    };
+        const data = await res.json();
+        setBody(data);
+    }
 
+    function createUser() {
+        fetch(`http://localhost:8055/users?access_token=Eb9Z-RyeWQdPvEFzGSPy26TYPt8rQm4O`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password
+            })
+        })
+    }
     useEffect(() => {
         togglePasswordVisibility();
     }, []);
@@ -68,15 +70,15 @@ function Login({updateFeatureStatus}) {
     return (
         <body className="align">
         <div className="grid">
-            <form method="POST" className="lf form login" onSubmit={handleSubmit}>
+            <form className="lf form login">
                 <img className="user" src={user} alt="User Logo" />
                 <div className="form_field">
                     <label className="label-form"><i className="fas fa-user" style={{ color: '#606468' }}></i></label>
-                    <input type="text" name="username" id="username" className="form_input" placeholder="USERNAME" required />
+                    <input value={email} onChange={(event) => setEmail(event.target.value)} type="text" name="username" id="username" className="form_input" placeholder="USERNAME" required  />
                 </div>
                 <div className="form_field">
                     <label className="label-form"><i className="fas fa-lock" style={{ color: '#606468' }}></i></label>
-                    <input type="password" id="password" name="password" className="form_input" placeholder="PASSWORD" required />
+                    <input onChange={(event) => setPassword(event.target.value)} type="password" id="password" name="password" className="form_input" placeholder="PASSWORD" required />
                     <i className="fas fa-eye eye-icon" onClick={togglePasswordVisibility}></i>
                 </div>
                 <div className="container">
@@ -85,8 +87,11 @@ function Login({updateFeatureStatus}) {
                     <a href="./change-password"><p className="forgot-password">Forgot your password ?</p></a>
                 </div>
                 <div className="form_field">
-                    <button className="submitButton" type="submit">LOGIN</button>
+                    <button className="submitButton" onSubmit={login}>LOGIN</button>
+                    <button className="submitButton" onSubmit={createUser}>Create</button>
                 </div>
+                <div>{body ? JSON.stringify(body) : 'RIEN'}</div>
+
             </form>
         </div>
         </body>
