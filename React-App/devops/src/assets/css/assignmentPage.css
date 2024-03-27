@@ -1,0 +1,72 @@
+body {
+  background-color: #071936; 
+  color: #ffffff; 
+  
+}   
+
+
+.big-header {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+ 
+  color: white;
+  font-size: 2em;
+  border-bottom: 1px solid #ffffff;
+}
+
+.assignments-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #071936; /* Updated background color */
+  padding: 20px;
+  border-radius: 8px;
+
+}
+
+
+  
+.assignment-header h1 {
+  font-size: 2em; 
+  text-align: left; 
+  margin-left: 10px; 
+  color: white;
+}
+  
+  .assignment-item {
+    
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid; 
+  }
+  
+  .assignment-item h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .assignment-item p {
+    margin: 5px 0;
+  }
+  
+  .dates {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .date-block {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .date-block strong {
+    font-weight: bold;
+  }
+  
+  /* Additional responsive styling if needed */
+  @media (max-width: 768px) {
+    .dates {
+      flex-direction: column;
+    }
+  }
+  
