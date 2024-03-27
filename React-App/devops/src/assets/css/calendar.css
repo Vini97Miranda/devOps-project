@@ -89,13 +89,29 @@
 }
 
 /* Calendar */
-.mois{
+.c-topnav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mois {
     background-color: #FFF;
     color: #000;
     padding-left: 10px;
 }
 
-.jourSemaine{
+.c-nav {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.c-nav a {
+    color: #000;
+}
+
+.jourSemaine {
     margin-right: 10px;
 }
 

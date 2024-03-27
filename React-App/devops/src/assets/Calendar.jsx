@@ -43,7 +43,15 @@ function Calendar() {
             </div>
 
             <div className='right-section'>
-                <h1 className='mois'>{month}</h1>
+                <div className='c-topnav'>
+                    <h1 className='mois'>{month}</h1>
+                    <div className='c-nav'>
+                        <a href='#'>Assignments</a>
+                        <a href='#'>1</a>
+                        <a href='#'>2</a>
+                        <a href='#'>3</a>
+                    </div>
+                </div>
                 <div className="bar"></div>
                 <div className="grille">
                     {week.map((item)=>(
